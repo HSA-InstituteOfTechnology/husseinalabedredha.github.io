@@ -1,0 +1,317 @@
+/* GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #FFFFFF;
+    color: #000000;
+    font-family: "Inter", sans-serif;
+    line-height: 1.7;
+    padding-bottom: 60px;
+}
+
+/* --- EDITORIAL TYPOGRAPHY SYSTEM (Condé Nast / Vogue) --- */
+
+:root {
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "Inter", "Helvetica Neue", sans-serif;
+}
+
+/* Headline refinement */
+h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* Section headings */
+h2 {
+    font-family: var(--serif);
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    color: #111;
+}
+
+/* Sub-headlines / h3 */
+h3 {
+    font-family: var(--serif);
+    font-weight: 600;
+    letter-spacing: -0.2px;
+}
+
+/* Body text refinement */
+body, p, li {
+    font-family: var(--sans);
+    font-size: 1.05rem;
+    color: #222;
+}
+
+/* Improve link styling */
+a {
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: 0.2s;
+}
+
+a:hover {
+    opacity: 0.7;
+    border-bottom: 1px solid #999;
+}
+
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    padding: 25px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E5E5E5;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 50;
+}
+
+.nav-left {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.navbar nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.navbar a {
+    margin-left: 35px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+}
+
+.navbar a:hover {
+    opacity: 0.6;
+}
+
+/* HERO (Condé Nast / Bon Appétit style) */
+.hero {
+    padding: 120px 50px 80px 50px;
+    max-width: 1000px;
+}
+
+.hero-title {
+    font-family: "Playfair Display", serif;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.hero-sub {
+    font-size: 1.25rem;
+    max-width: 700px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.hero-tagline {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* GENERIC PAGE LAYOUT */
+.page {
+    max-width: 900px;
+    margin: auto;
+    padding: 50px;
+}
+
+/* BOX SECTIONS (CV / Research / Highlights) */
+.paper-box {
+    padding: 25px;
+    border-left: 4px solid black;
+    background: #FAFAFA;
+    margin-bottom: 25px;
+}
+
+/* LISTS */
+.page ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+/* FOOTER (IF YOU ADD ONE LATER) */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* ------------- MOBILE RESPONSIVE ------------- */
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar nav {
+        margin-top: 10px;
+    }
+
+    .navbar a {
+        margin-left: 0;
+        margin-right: 20px;
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        padding: 80px 20px 40px 20px;
+    }
+
+    .hero-title {
+        font-size: 2.4rem;
+    }
+
+    .hero-sub {
+        font-size: 1.05rem;
+    }
+
+    .page {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .navbar nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .navbar a {
+        margin-right: 15px;
+        margin-bottom: 5px;
+    }
+}
+/* --- VOGUE / CONDÉ NAST DIVIDER --- */
+.divider {
+    width: 100%;
+    height: 1px;
+    background: #E5E5E5;
+    margin: 40px 0;
+}
+
+/* --- NEW YORKER DROP CAP --- */
+.dropcap:first-letter {
+    float: left;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 3.6rem;
+    line-height: 0.9;
+    font-weight: 700;
+    padding-right: 12px;
+    padding-top: 4px;
+    color: #000;
+}
+
+/* --- SOFT FADE IN ANIMATIONS --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delay classes for staggered animations */
+.fade-delay-1 { animation-delay: 0.2s; }
+.fade-delay-2 { animation-delay: 0.4s; }
+.fade-delay-3 { animation-delay: 0.6s; }
+
+/* --- EDITORIAL PORTRAIT STYLE --- */
+.portrait-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+}
+
+.portrait {
+    width: 220px;
+    height: auto;
+    border: 1px solid #E5E5E5;
+    object-fit: cover;
+}
+/* CONTACT SECTION TWO-COLUMN LAYOUT */
+.contact-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.contact-text {
+    flex: 1;
+}
+
+.contact-photo {
+    width: 260px;
+    height: auto;
+    border: 1px solid #E5E5E5;
+    object-fit: cover;
+}
+
+/* MOBILE RESPONSIVE: STACK */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-photo {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+/* CIRCULAR PORTRAIT + VOGUE BORDER */
+.contact-photo {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #111; /* Vogue thin bold black circle */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Center on mobile */
+@media (max-width: 768px) {
+    .contact-photo {
+        margin-top: 20px;
+        width: 220px;
+        height: 220px;
+    }
+}
